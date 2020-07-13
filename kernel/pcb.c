@@ -60,7 +60,7 @@ static void pcb_clear_stoped(void);
 void pcb_clear_process(void)
 {
 	//pcb资源进程优先级30
-	pcb_create(PROCESS_CNT - 2, &pcb_clear_stoped, NULL, 200);
+	pcb_create(PROCESS_CNT - 2, &pcb_clear_stoped, NULL, 1024);
 }
 
 //创建一个进程
@@ -189,7 +189,7 @@ void pcb_clear_stoped(void)
 			if (pcbs[i].status == PCB_ST_STOPED)
 			{
 				free(pcbs[i].p_stack_mem);
-				pcbs[i].stack_size = 0;
+				memset(&pcbs[i], 0, sizeof(pcb_s));
 			}
 		}
 	}
