@@ -1,16 +1,16 @@
 /*
- * k_printf.h
+ * stdio.h
  *
  *  Created on: January 2, 2020
  *      Author: lidq
  */
-#ifndef _SRC_LIB_K_PRINTF_H
-#define _SRC_LIB_K_PRINTF_H
+#ifndef _SRC_LIB_STDIO_H
+#define _SRC_LIB_STDIO_H
 
 #ifndef NULL
 #define NULL (void *)(0)
 #endif
 
-int k_printf(char *fmt, ...);
+int printf(char *fmt, ...);
 
 #endif

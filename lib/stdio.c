@@ -1,11 +1,12 @@
 /*
- * k_printf.c
+ * stdio.c
  *
  *  Created on: January 2, 2020
  *      Author: lidq
  */
 
-#include <k_printf.h>
+#include <stdio.h>
+#include <libc.h>
 #include <fcntl.h>
 #include <stdarg.h>
 #include <mm.h>
@@ -15,7 +16,7 @@
 static char *buff = NULL;
 static sem_t sem_p = {0};
 
-int k_printf(char *fmt, ...)
+int printf(char *fmt, ...)
 {
 	if (buff == NULL)
 	{
@@ -40,4 +41,43 @@ int k_printf(char *fmt, ...)
 
 	sem_post(&sem_p);
 	return ret;
+}
+
+struct stat
+{
+};
+
+int _fstat(int fd, struct stat *pStat)
+{
+	return 0;
+}
+
+int _close(int fd)
+{
+	return -1;
+}
+
+int _write(int fd, char *pBuffer, int size)
+{
+	return -1;
+}
+
+int _isatty(int fd)
+{
+	return 1;
+}
+
+int _lseek(int fd, int offset, int size)
+{
+	return -1;
+}
+
+int _read(int fd, char *pBuffer, int size)
+{
+	return -1;
+}
+
+int _sbrk(int increment)
+{
+	return -1;
 }

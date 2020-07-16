@@ -9,7 +9,6 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include <k_printf.h>
 #include <string.h>
 
 //静态链表最大个数32

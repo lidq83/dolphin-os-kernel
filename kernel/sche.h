@@ -9,7 +9,7 @@
 
 #include <stdint.h>
 #include <pcb.h>
-#include <k_printf.h>
+#include <stdio.h>
 //
 void sche_init(void);
 

@@ -8,7 +8,7 @@
 #define __SRC_VFS_FS_H
 
 #include <vfs.h>
-#include <k_printf.h>
+#include <stdio.h>
 
 int fs_register_dev(char *path, file_operations_s ops);
 

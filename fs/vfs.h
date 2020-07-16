@@ -11,7 +11,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <sem.h>
-#include <k_printf.h>
+#include <stdio.h>
 
 #define NODE_NAME_SIZE (128)
 
