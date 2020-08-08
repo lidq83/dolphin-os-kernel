@@ -79,6 +79,18 @@
 #define ERROR -1
 #endif
 
+struct mallinfo
+{
+	int arena; /* This is the total size of memory allocated
+                 * for use by malloc in bytes. */
+	int ordblks; /* This is the number of free (not in use) chunks */
+	int mxordblk; /* Size of the largest free (not in use) chunk */
+	int uordblks; /* This is the total size of memory occupied by
+                 * chunks handed out by malloc. */
+	int fordblks; /* This is the total size of memory occupied
+                 * by free (not in use) chunks.*/
+};
+
 void mm_init(void);
 void kmm_initialize(FAR void *heap_start, size_t heap_size);
 FAR void *malloc(size_t size);
@@ -495,6 +507,10 @@ EXTERN struct mm_heap_s g_mmheap;
 	/* Functions contained in mm_size2ndx.c.c ***********************************/
 
 	int mm_size2ndx(size_t size);
+
+	int mallinfo(FAR struct mallinfo *info);
+
+	int mm_mallinfo(FAR struct mm_heap_s *heap, FAR struct mallinfo *info);
 
 #undef EXTERN
 #ifdef __cplusplus

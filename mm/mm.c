@@ -32,3 +32,8 @@ void free(FAR void *mem)
 {
 	mm_free(&g_kmmheap, mem);
 }
+
+int mallinfo(FAR struct mallinfo* info)
+{
+	return mm_mallinfo(&g_kmmheap, info);
+}
