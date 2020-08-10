@@ -13,7 +13,7 @@ uint8_t top(top_s *t)
 
 	uint8_t j = 0;
 	//关中断
-	sche_interrupt_disable();
+	// sche_interrupt_disable();
 
 	for (uint8_t i = 0; i < PROCESS_CNT; i++)
 	{
@@ -39,7 +39,7 @@ uint8_t top(top_s *t)
 	}
 
 	//开中断
-	sche_interrupt_enable();
+	// sche_interrupt_enable();
 
 	return j;
 }
