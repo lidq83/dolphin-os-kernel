@@ -72,7 +72,7 @@ pcb_s *pcb_create(uint8_t prio, void *p_entry, void *p_arg, uint32_t stack_size)
 		return NULL;
 	}
 	//设置栈内存默认值以便统计
-	memset(stack , 0xff, stack_size);
+	memset(stack , 0, stack_size);
 	//初始化pcb状态
 	pcbs[prio].status = PCB_ST_INIT;
 	//初始化栈
