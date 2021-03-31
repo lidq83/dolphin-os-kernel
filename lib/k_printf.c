@@ -19,7 +19,7 @@ int k_printf(char *fmt, ...)
 {
 	if (buff == NULL)
 	{
-		buff = malloc(BUFF_SIZE_UART);
+		buff = malloc(BUFF_SIZE);
 		sem_init(&sem_p, 1);
 	}
 
@@ -33,7 +33,7 @@ int k_printf(char *fmt, ...)
 	va_list ap;
 	int ret;
 	va_start(ap, fmt);
-	ret = vsnprintf(buff, BUFF_SIZE_UART, fmt, ap);
+	ret = vsnprintf(buff, BUFF_SIZE, fmt, ap);
 	va_end(ap);
 
 	write(1, buff, ret);
